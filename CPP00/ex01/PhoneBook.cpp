@@ -17,6 +17,14 @@ std::string PhoneBook::promptInput(const std::string& fieldName) const {
     return input;
 }
 
+bool isNumber(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!isdigit(str[i]))
+            return false;
+    }
+    return true;
+}
+
 void PhoneBook::addContact() {
     Contact contact;
     contact.setField(0, promptInput("First name"));
@@ -54,7 +62,12 @@ void PhoneBook::searchContact() const {
     std::cout << "Enter index: ";
     std::string input;
     std::getline(std::cin, input);
-    int index = std::atoi(input.c_str());
+
+    if (!isNumber(input)) {
+        std::cout << "Invalid index." << std::endl;
+        return;
+    }
+    int index = atoi(input.c_str());
 
     if (index < 0 || index >= count) {
         std::cout << "Invalid index." << std::endl;
