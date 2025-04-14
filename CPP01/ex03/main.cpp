@@ -4,26 +4,26 @@
 
 int main() {
     {
-        Weapon bat("bate de madera");
-        HumanA luis("Luis", bat);
+        Weapon bat("wooden bat");
+        HumanA jim("Jim", bat);
 
-        luis.attack();
-        bat.setType("bate con clavos");
-        luis.attack();
+        jim.attack();
+        bat.setType("spiked bat");
+        jim.attack();
     }
 
     std::cout << "--------------------" << std::endl;
 
     {
-        Weapon palo("palo oxidado");
-        HumanB carla("Carla");
+        Weapon stick("rusty stick");
+        HumanB bob("Bob");
 
-        carla.attack();  // sin arma
-        carla.equip(palo);
-        carla.attack();
+        bob.attack();  // sin arma
+        bob.equip(stick);
+        bob.attack();
 
-        palo.setType("machete improvisado");
-        carla.attack();
+        stick.setType("improvised machete");
+        bob.attack();
     }
 
     return 0;
