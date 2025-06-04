@@ -6,7 +6,7 @@ Dog::Dog() {
     std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : AAnimal(other) {
+Dog::Dog(const Dog &other) : Animal(other) {
     std::cout << "Dog copy constructor called" << std::endl;
     this->brain = new Brain(*other.brain);
     this->type = other.type;
@@ -15,7 +15,7 @@ Dog::Dog(const Dog &other) : AAnimal(other) {
 Dog &Dog::operator=(const Dog &other) {
     std::cout << "Dog assignment operator called" << std::endl;
     if (this != &other) {
-        AAnimal::operator=(other);
+        Animal::operator=(other);
         type = other.type;
         if (this->brain) {
             delete brain;

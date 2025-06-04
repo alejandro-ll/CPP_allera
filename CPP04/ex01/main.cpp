@@ -1,4 +1,4 @@
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include <vector>
@@ -11,7 +11,7 @@ int main()
     // and cats as Animals. The appropriate destructors must be called in the expected order
 
     // Create an array of Animal pointers
-    std::vector<AAnimal*> animals;
+    std::vector<Animal*> animals;
 
 
     // Fill the array with Dog and Cat objects 4 in total
